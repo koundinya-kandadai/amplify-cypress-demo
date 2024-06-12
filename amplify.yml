@@ -26,5 +26,7 @@ test:
         - npm run generate-report
   artifacts:
     files:
-        - '**/*'
+        - '**/*.png',
+        - '**/*.mp4'
     baseDirectory: cypress
+    configFilePath: '**/mochawesome.json'
