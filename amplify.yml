@@ -27,4 +27,4 @@ test:
   artifacts:
     files:
         - '**/*'
-    baseDirectory: cypress/reports/mochawesome
+    baseDirectory: cypress
