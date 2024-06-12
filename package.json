@@ -16,9 +16,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "cypress:run":"cypress run --reporter mochawesome --reporter-options reportDir=cypress/reports/mochawesome,reportFilename=report.json",
-    "merge-reports": "mochawesome-merge cypress/reports/mochawesome/*.json > mochawesome.json",
-    "generate-report": "marge mochawesome.json -f report -o cypress/reports/mochawesome"
+    "cypress:run":"cypress run --reporter mochawesome --reporter-options reportDir=cypress/report/mochawesome,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss",
+    "merge-reports": "mochawesome-merge cypress/report/mochawesome/mochawesome*.json > cypress/report/mochawesome.json"
   },
   "eslintConfig": {
     "extends": [
