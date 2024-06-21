@@ -1,7 +1,6 @@
 describe('My First Test', () => {
-    it('Visits the React App', () => {
-      cy.visit('/')
-      cy.contains('Learn React')
-    })
+  it('Visits the React App and fails on purpose', () => {
+    cy.visit('/')
+    cy.contains('Non-Existent Text')
   })
-  
+})
