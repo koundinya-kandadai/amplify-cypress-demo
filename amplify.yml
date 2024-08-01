@@ -3,10 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
-        - cypress version
-        - npm install
-        - cypress version
-        - echo npm next -version
+        - npm ci
     build:
       commands:
         - npm run build
@@ -26,7 +23,12 @@ test:
         - npm install start-test
     test:
       commands:
-        - npx start-test 'npm start' 4000 'npx cypress run --reporter ../../node_modules/mochawesome --reporter-options "reportDir=cypress/report/mochawesome-report,overwrite=true,html=false,json=true,timestamp=mmddyyyy_HHMMss"'
+        - pwd
+        - ls
+        - ls cypress
+        - ls cypress/report
+        - ls cypress/report/mochawesome-report
+        - npx start-test 'npm start' 4000 'npx cypress run --reporter ../../node_modules/mochawesome --reporter-options "reportDir=cypress/report/mochawesome-report,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss"'
     postTest:
       commands:
         - npx mochawesome-merge cypress/report/mochawesome-report/mochawesome*.json > cypress/report/mochawesome.json
